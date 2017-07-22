@@ -22,6 +22,9 @@ import org.opencv.core.Mat;
 
 import java.lang.reflect.Method;
 
+// TODO
+// 1. lock orientation so that the camera preview does not restart?
+// 2. Whatsapp - changes orientation but need to do custom implementation for faster responses?
 public class MainActivity extends AppCompatActivity implements CameraBridgeViewBase.CvCameraViewListener2 {
 
     static final int MY_PERMISSIONS_REQUEST_CAMERA = 1;

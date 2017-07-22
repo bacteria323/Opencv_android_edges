@@ -5,6 +5,7 @@
       <module fileurl="file://$PROJECT_DIR$/LiveEdges.iml" filepath="$PROJECT_DIR$/LiveEdges.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/openCVLibrary2411/openCVLibrary2411.iml" filepath="$PROJECT_DIR$/openCVLibrary2411/openCVLibrary2411.iml" />
+      <module fileurl="file://$PROJECT_DIR$/openCVLibrary24132/openCVLibrary24132.iml" filepath="$PROJECT_DIR$/openCVLibrary24132/openCVLibrary24132.iml" />
     </modules>
   </component>
 </project>

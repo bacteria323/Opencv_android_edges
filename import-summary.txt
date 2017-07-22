@@ -42,6 +42,13 @@ so manually move them:
 * javadoc/org/opencv/calib3d/package-frame.html
 * javadoc/org/opencv/calib3d/package-summary.html
 * javadoc/org/opencv/calib3d/package-tree.html
+* javadoc/org/opencv/contrib/
+* javadoc/org/opencv/contrib/Contrib.html
+* javadoc/org/opencv/contrib/FaceRecognizer.html
+* javadoc/org/opencv/contrib/StereoVar.html
+* javadoc/org/opencv/contrib/package-frame.html
+* javadoc/org/opencv/contrib/package-summary.html
+* javadoc/org/opencv/contrib/package-tree.html
 * javadoc/org/opencv/core/
 * javadoc/org/opencv/core/Algorithm.html
 * javadoc/org/opencv/core/Core.MinMaxLocResult.html
@@ -74,6 +81,10 @@ so manually move them:
 * javadoc/org/opencv/core/package-frame.html
 * javadoc/org/opencv/core/package-summary.html
 * javadoc/org/opencv/core/package-tree.html
+* javadoc/org/opencv/engine/
+* javadoc/org/opencv/engine/package-frame.html
+* javadoc/org/opencv/engine/package-summary.html
+* javadoc/org/opencv/engine/package-tree.html
 * javadoc/org/opencv/features2d/
 * javadoc/org/opencv/features2d/DMatch.html
 * javadoc/org/opencv/features2d/DescriptorExtractor.html
@@ -85,6 +96,13 @@ so manually move them:
 * javadoc/org/opencv/features2d/package-frame.html
 * javadoc/org/opencv/features2d/package-summary.html
 * javadoc/org/opencv/features2d/package-tree.html
+* javadoc/org/opencv/gpu/
+* javadoc/org/opencv/gpu/DeviceInfo.html
+* javadoc/org/opencv/gpu/Gpu.html
+* javadoc/org/opencv/gpu/TargetArchs.html
+* javadoc/org/opencv/gpu/package-frame.html
+* javadoc/org/opencv/gpu/package-summary.html
+* javadoc/org/opencv/gpu/package-tree.html
 * javadoc/org/opencv/highgui/
 * javadoc/org/opencv/highgui/Highgui.html
 * javadoc/org/opencv/highgui/VideoCapture.html
@@ -153,7 +171,10 @@ so manually move them:
 * javadoc/overview-tree.html
 * javadoc/package-list
 * javadoc/resources/
-* javadoc/resources/inherit.gif
+* javadoc/resources/background.gif
+* javadoc/resources/tab.gif
+* javadoc/resources/titlebar.gif
+* javadoc/resources/titlebar_end.gif
 * javadoc/serialized-form.html
 * javadoc/stylesheet.css
 
@@ -162,11 +183,11 @@ Moved Files:
 Android Gradle projects use a different directory structure than ADT
 Eclipse projects. Here's how the projects were restructured:
 
-* AndroidManifest.xml => openCVLibrary2411/src/main/AndroidManifest.xml
-* lint.xml => openCVLibrary2411/lint.xml
-* res/ => openCVLibrary2411/src/main/res/
-* src/ => openCVLibrary2411/src/main/java/
-* src/org/opencv/engine/OpenCVEngineInterface.aidl => openCVLibrary2411/src/main/aidl/org/opencv/engine/OpenCVEngineInterface.aidl
+* AndroidManifest.xml => openCVLibrary24132/src/main/AndroidManifest.xml
+* lint.xml => openCVLibrary24132/lint.xml
+* res/ => openCVLibrary24132/src/main/res/
+* src/ => openCVLibrary24132/src/main/java/
+* src/org/opencv/engine/OpenCVEngineInterface.aidl => openCVLibrary24132/src/main/aidl/org/opencv/engine/OpenCVEngineInterface.aidl
 
 Next Steps:
 -----------

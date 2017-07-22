@@ -16,12 +16,12 @@
         android:layout_height="wrap_content"
         android:text="Hello World!" />
 
-    <org.opencv.android.JavaCameraView
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:visibility="gone"
-        android:id="@+id/HelloVisionView"
-        opencv:show_fps="true"
-        opencv:camera_id="any" />
+    <!--<org.opencv.android.JavaCameraView-->
+        <!--android:layout_width="fill_parent"-->
+        <!--android:layout_height="fill_parent"-->
+        <!--android:visibility="gone"-->
+        <!--android:id="@+id/HelloVisionView"-->
+        <!--opencv:show_fps="true"-->
+        <!--opencv:camera_id="any" />-->
 
 </RelativeLayout>

@@ -1,5 +1,6 @@
 package org.opencv.android;
 
+import java.lang.reflect.Method;
 import java.util.List;
 
 import android.content.Context;
@@ -16,6 +17,8 @@ import org.opencv.core.CvType;
 import org.opencv.core.Mat;
 import org.opencv.core.Size;
 import org.opencv.imgproc.Imgproc;
+
+import static android.content.res.Configuration.ORIENTATION_PORTRAIT;
 
 /**
  * This class is an implementation of the Bridge View between OpenCV and Java Camera.
@@ -197,6 +200,15 @@ public class JavaCameraView extends CameraBridgeViewBase implements PreviewCallb
 
                     /* Finally we are ready to start the preview */
                     Log.d(TAG, "startPreview");
+
+                    // Custom method to change orientation of image
+                    if (getResources().getConfiguration().orientation == ORIENTATION_PORTRAIT) {
+                        setDisplayOrientation(mCamera, 90);
+                    } else {
+                        setDisplayOrientation(mCamera, 0);
+                    }
+
+                    mCamera.setPreviewDisplay(getHolder());
                     mCamera.startPreview();
                 }
                 else
@@ -208,6 +220,17 @@ public class JavaCameraView extends CameraBridgeViewBase implements PreviewCallb
         }
 
         return result;
+    }
+
+    protected void setDisplayOrientation(Camera camera, int angle){
+        Method downPolymorphic;
+        try
+        {
+            downPolymorphic = camera.getClass().getMethod("setDisplayOrientation", new Class[] { int.class });
+            if (downPolymorphic != null)
+                downPolymorphic.invoke(camera, new Object[] { angle });
+        }
+        catch (Exception e1) {}
     }
 
     protected void releaseCamera() {

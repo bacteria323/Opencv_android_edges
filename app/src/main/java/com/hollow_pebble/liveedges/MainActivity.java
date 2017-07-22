@@ -2,6 +2,7 @@ package com.hollow_pebble.liveedges;
 
 import android.Manifest;
 import android.content.pm.PackageManager;
+import android.graphics.Camera;
 import android.os.Build;
 import android.support.annotation.NonNull;
 import android.support.v4.content.ContextCompat;
@@ -14,9 +15,12 @@ import android.widget.Button;
 
 import org.opencv.android.BaseLoaderCallback;
 import org.opencv.android.CameraBridgeViewBase;
+import org.opencv.android.JavaCameraView;
 import org.opencv.android.LoaderCallbackInterface;
 import org.opencv.android.OpenCVLoader;
 import org.opencv.core.Mat;
+
+import java.lang.reflect.Method;
 
 public class MainActivity extends AppCompatActivity implements CameraBridgeViewBase.CvCameraViewListener2 {
 
@@ -26,7 +30,8 @@ public class MainActivity extends AppCompatActivity implements CameraBridgeViewB
     private static final String TAG = "MainActivity";
 
     //A class used to implement the interaction between OpenCV and the device camera.
-    private CameraBridgeViewBase mOpenCvCameraView;
+    //private CameraBridgeViewBase mOpenCvCameraView;
+    private JavaCameraView mJavaCameraView;
 
     //Button cameraButton;
 
@@ -55,12 +60,15 @@ public class MainActivity extends AppCompatActivity implements CameraBridgeViewB
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
         setContentView(R.layout.activity_main);
 
-        mOpenCvCameraView = (CameraBridgeViewBase) findViewById(R.id.HelloVisionView);
+        //mOpenCvCameraView = (CameraBridgeViewBase) findViewById(R.id.HelloVisionView);
+        mJavaCameraView = (JavaCameraView) findViewById(R.id.HelloVisionView);
 
         //Set the view as visible
-        mOpenCvCameraView.setVisibility(SurfaceView.VISIBLE);
+        //mOpenCvCameraView.setVisibility(SurfaceView.VISIBLE);
+        mJavaCameraView.setVisibility(SurfaceView.VISIBLE);
         //Register your activity as the callback object to handle //camera frames
-        mOpenCvCameraView.setCvCameraViewListener(this);
+        //mOpenCvCameraView.setCvCameraViewListener(this);
+        mJavaCameraView.setCvCameraViewListener(this);
 
         checkCameraPermissions();
     }
@@ -75,9 +83,14 @@ public class MainActivity extends AppCompatActivity implements CameraBridgeViewB
         }
         else {
             //takePhoto();
-            mOpenCvCameraView.enableView();
+            //setDisplayOrientation(mOpenCvCameraView, 90);
+            //mOpenCvCameraView.enableView();
+            mJavaCameraView.enableView();
+            //mJavaCameraView.setDisplay
         }
     }
+
+
 
     @Override
     protected void onResume() {
@@ -103,6 +116,7 @@ public class MainActivity extends AppCompatActivity implements CameraBridgeViewB
     public Mat onCameraFrame(CameraBridgeViewBase.CvCameraViewFrame inputFrame) {
         //We're returning the colored frame as is to be rendered on
         //thescreen.
+
         return inputFrame.rgba();
         //return null;
     }
@@ -119,7 +133,8 @@ public class MainActivity extends AppCompatActivity implements CameraBridgeViewB
                     // contacts-related task you need to do.
                     Log.e("Permission", "CAMERA GRANTED");
                     //takePhoto();
-                    mOpenCvCameraView.enableView();
+                    //mOpenCvCameraView.enableView();
+                    mJavaCameraView.enableView();
                 }
                 break;
 
